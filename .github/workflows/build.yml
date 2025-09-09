@@ -1,0 +1,13 @@
+name: Build Core
+on:
+  push:
+jobs:
+  build-gradle-project:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Project Sources
+      uses: actions/checkout@v4
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+    - name: Run Jar with Gradle Wrapper
+      run: ./gradlew jar
