@@ -11,3 +11,10 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run Jar with Gradle Wrapper
       run: ./gradlew jar
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: gtlcore
+        path: |
+          ./build/devlibs/*.jar
+
